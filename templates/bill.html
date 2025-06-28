@@ -1,0 +1,32 @@
+<!-- templates/bill.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bill Summary</title>
+</head>
+<body>
+  <h2>🧾 Bill Summary</h2>
+  <table border="1">
+    <tr>
+      <th>Title</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Total</th>
+    </tr>
+    {% for item in bill_items %}
+    <tr>
+      <td>{{ item.title }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>₹{{ item.price }}</td>
+      <td>₹{{ item.total }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="3"><b>Grand Total</b></td>
+      <td><b>₹{{ grand_total }}</b></td>
+    </tr>
+  </table>
+  <p>✅ Payment Successful. Thank you for shopping!</p>
+  <a href="/catalog">Continue Shopping</a>
+</body>
+</html>
